@@ -23,7 +23,8 @@ from omni_anomaly.utils import get_data_dim, get_data, save_z
 
 class ExpConfig(Config):
     # dataset configuration
-    dataset = "machine-1-1"
+    # dataset = "machine-1-1"
+    dataset = "MSL"
     x_dim = get_data_dim(dataset)
 
     # model architecture configuration

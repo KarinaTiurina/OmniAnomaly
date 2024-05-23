@@ -1,0 +1,534 @@
+(opt-6.3) D:\Karina\Optimization\OmniAnomaly>python main.py
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:71: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:76: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+Configurations
+===========================================
+{'batch_size': 50,
+ 'bf_search_max': 400.0,
+ 'bf_search_min': -400.0,
+ 'bf_search_step_size': 1.0,
+ 'dataset': 'SMAP',
+ 'dense_dim': 500,
+ 'early_stop': True,
+ 'get_score_on_dim': False,
+ 'gradient_clip_norm': 10.0,
+ 'initial_lr': 0.001,
+ 'l2_reg': 0.0001,
+ 'level': 0.01,
+ 'lr_anneal_epoch_freq': 40,
+ 'lr_anneal_factor': 0.5,
+ 'lr_anneal_step_freq': None,
+ 'max_epoch': 10,
+ 'max_test_size': None,
+ 'max_train_size': None,
+ 'nf_layers': 20,
+ 'posterior_flow_type': 'nf',
+ 'restore_dir': None,
+ 'result_dir': 'result',
+ 'rnn_cell': 'GRU',
+ 'rnn_num_hidden': 500,
+ 'save_dir': 'model',
+ 'save_z': False,
+ 'std_epsilon': 0.0001,
+ 'test_batch_size': 50,
+ 'test_n_z': 1,
+ 'test_score_filename': 'test_score.pkl',
+ 'test_start': 0,
+ 'train_score_filename': 'train_score.pkl',
+ 'train_start': 0,
+ 'use_connected_z_p': True,
+ 'use_connected_z_q': True,
+ 'valid_step_freq': 100,
+ 'window_length': 100,
+ 'x_dim': 25,
+ 'z_dim': 3}
+
+load data of: SMAP
+train:  0 None
+test:  0 None
+Data normalized
+Data normalized
+train set shape:  (135183, 25)
+test set shape:  (427617, 25)
+test set label shape:  (427617,)
+WARNING:tensorflow:From main.py:101: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+2024-05-21 20:53:16,432 [WARNING] tensorflow: From main.py:101: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\scope.py:56: The name tf.VariableScope is deprecated. Please use tf.compat.v1.VariableScope instead.
+
+2024-05-21 20:53:16,432 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\scope.py:56: The name tf.VariableScope is deprecated. Please use tf.compat.v1.VariableScope instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\model.py:49: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\model.py:49: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:107: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:107: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:113: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:113: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\reuse.py:201: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\reuse.py:201: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+2024-05-21 20:53:16,494 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+2024-05-21 20:53:16,504 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-05-21 20:53:16,504 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-05-21 20:53:16,504 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\ops\rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2024-05-21 20:53:16,935 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\layers\core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2024-05-21 20:53:16,936 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\layers\core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\zhusuan\distributions\univariate.py:100: The name tf.log is deprecated. Please use tf.math.log instead.
+
+2024-05-21 20:53:16,960 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\zhusuan\distributions\univariate.py:100: The name tf.log is deprecated. Please use tf.math.log instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\zhusuan\distributions\univariate.py:167: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+2024-05-21 20:53:16,975 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\zhusuan\distributions\univariate.py:167: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\recurrent_distribution.py:101: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+2024-05-21 20:53:16,978 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\recurrent_distribution.py:101: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\recurrent_distribution.py:68: The name tf.check_numerics is deprecated. Please use tf.debugging.check_numerics instead.
+
+2024-05-21 20:53:17,068 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\recurrent_distribution.py:68: The name tf.check_numerics is deprecated. Please use tf.debugging.check_numerics instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\layers\flows\utils.py:126: The name tf.assert_equal is deprecated. Please use tf.compat.v1.assert_equal instead.
+
+2024-05-21 20:53:17,089 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\layers\flows\utils.py:126: The name tf.assert_equal is deprecated. Please use tf.compat.v1.assert_equal instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_probability\python\internal\distribution_util.py:542: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2024-05-21 20:53:18,191 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_probability\python\internal\distribution_util.py:542: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:123: The name tf.losses.get_regularization_loss is deprecated. Please use tf.compat.v1.losses.get_regularization_loss instead.
+
+2024-05-21 20:53:18,350 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:123: The name tf.losses.get_regularization_loss is deprecated. Please use tf.compat.v1.losses.get_regularization_loss instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:100: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+2024-05-21 20:53:18,350 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:100: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:163: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+2024-05-21 20:53:22,505 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:163: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:165: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+2024-05-21 20:53:22,505 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:165: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+WARNING:tensorflow:From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:169: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+2024-05-21 20:53:22,541 [WARNING] tensorflow: From D:\Karina\Optimization\OmniAnomaly\omni_anomaly\training.py:169: The name tf.variables_initializer is deprecated. Please use tf.compat.v1.variables_initializer instead.
+
+WARNING:tensorflow:From main.py:120: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2024-05-21 20:53:22,541 [WARNING] tensorflow: From main.py:120: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2024-05-21 20:53:22.544373: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:65: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+2024-05-21 20:53:22,541 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:65: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:127: The name tf.is_variable_initialized is deprecated. Please use tf.compat.v1.is_variable_initialized instead.
+
+2024-05-21 20:53:23,017 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\utils\session.py:127: The name tf.is_variable_initialized is deprecated. Please use tf.compat.v1.is_variable_initialized instead.
+
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\scaffold\variable_saver.py:56: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+2024-05-21 20:53:23,909 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tfsnippet\scaffold\variable_saver.py:56: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+Trainable Parameters                                            (2,575,214 in total)
+------------------------------------------------------------------------------------
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/kernel             (525, 1000)  525,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/bias               (1000,)        1,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/kernel         (525, 500)   262,500
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/bias           (500,)           500
+model/q_z_given_x/rnn_q_z/dense/kernel                          (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense/bias                            (500,)           500
+model/q_z_given_x/rnn_q_z/dense_1/kernel                        (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense_1/bias                          (500,)           500
+model/vae/variational/z_mean/kernel                             (503, 3)       1,509
+model/vae/variational/z_mean/bias                               (3,)               3
+model/vae/variational/z_std/kernel                              (503, 3)       1,509
+model/vae/variational/z_std/bias                                (3,)               3
+model/posterior_flow/_0/w                                       (1, 3)             3
+model/posterior_flow/_0/b                                       (1,)               1
+model/posterior_flow/_0/u                                       (1, 3)             3
+model/posterior_flow/_1/w                                       (1, 3)             3
+model/posterior_flow/_1/b                                       (1,)               1
+model/posterior_flow/_1/u                                       (1, 3)             3
+model/posterior_flow/_2/w                                       (1, 3)             3
+model/posterior_flow/_2/b                                       (1,)               1
+model/posterior_flow/_2/u                                       (1, 3)             3
+model/posterior_flow/_3/w                                       (1, 3)             3
+model/posterior_flow/_3/b                                       (1,)               1
+model/posterior_flow/_3/u                                       (1, 3)             3
+model/posterior_flow/_4/w                                       (1, 3)             3
+model/posterior_flow/_4/b                                       (1,)               1
+model/posterior_flow/_4/u                                       (1, 3)             3
+model/posterior_flow/_5/w                                       (1, 3)             3
+model/posterior_flow/_5/b                                       (1,)               1
+model/posterior_flow/_5/u                                       (1, 3)             3
+model/posterior_flow/_6/w                                       (1, 3)             3
+model/posterior_flow/_6/b                                       (1,)               1
+model/posterior_flow/_6/u                                       (1, 3)             3
+model/posterior_flow/_7/w                                       (1, 3)             3
+model/posterior_flow/_7/b                                       (1,)               1
+model/posterior_flow/_7/u                                       (1, 3)             3
+model/posterior_flow/_8/w                                       (1, 3)             3
+model/posterior_flow/_8/b                                       (1,)               1
+model/posterior_flow/_8/u                                       (1, 3)             3
+model/posterior_flow/_9/w                                       (1, 3)             3
+model/posterior_flow/_9/b                                       (1,)               1
+model/posterior_flow/_9/u                                       (1, 3)             3
+model/posterior_flow/_10/w                                      (1, 3)             3
+model/posterior_flow/_10/b                                      (1,)               1
+model/posterior_flow/_10/u                                      (1, 3)             3
+model/posterior_flow/_11/w                                      (1, 3)             3
+model/posterior_flow/_11/b                                      (1,)               1
+model/posterior_flow/_11/u                                      (1, 3)             3
+model/posterior_flow/_12/w                                      (1, 3)             3
+model/posterior_flow/_12/b                                      (1,)               1
+model/posterior_flow/_12/u                                      (1, 3)             3
+model/posterior_flow/_13/w                                      (1, 3)             3
+model/posterior_flow/_13/b                                      (1,)               1
+model/posterior_flow/_13/u                                      (1, 3)             3
+model/posterior_flow/_14/w                                      (1, 3)             3
+model/posterior_flow/_14/b                                      (1,)               1
+model/posterior_flow/_14/u                                      (1, 3)             3
+model/posterior_flow/_15/w                                      (1, 3)             3
+model/posterior_flow/_15/b                                      (1,)               1
+model/posterior_flow/_15/u                                      (1, 3)             3
+model/posterior_flow/_16/w                                      (1, 3)             3
+model/posterior_flow/_16/b                                      (1,)               1
+model/posterior_flow/_16/u                                      (1, 3)             3
+model/posterior_flow/_17/w                                      (1, 3)             3
+model/posterior_flow/_17/b                                      (1,)               1
+model/posterior_flow/_17/u                                      (1, 3)             3
+model/posterior_flow/_18/w                                      (1, 3)             3
+model/posterior_flow/_18/b                                      (1,)               1
+model/posterior_flow/_18/u                                      (1, 3)             3
+model/posterior_flow/_19/w                                      (1, 3)             3
+model/posterior_flow/_19/b                                      (1,)               1
+model/posterior_flow/_19/u                                      (1, 3)             3
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/kernel      (503, 1000)  503,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/bias        (1000,)        1,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/kernel  (503, 500)   251,500
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/bias    (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense/kernel                   (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense/bias                     (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense_1/kernel                 (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense_1/bias                   (500,)           500
+model/p_x_given_z/x_mean/kernel                                 (500, 25)     12,500
+model/p_x_given_z/x_mean/bias                                   (25,)             25
+model/p_x_given_z/x_std/kernel                                  (500, 25)     12,500
+model/p_x_given_z/x_std/bias                                    (25,)             25
+
+train_values: (94629, 25)
+[Epoch 1/10, Step 100] step time: 2.617s (±21.23s); train time: 48.42s; valid time: 3m 33.36s; loss: -13.4853 (±15.7661); valid loss: -30.3164 (*)
+[Epoch 1/10, Step 200] step time: 2.592s (±21.43s); train time: 43.85s; valid time: 3m 35.32s; loss: -29.7483 (±2.9352); valid loss: -35.9233 (*)
+[Epoch 1/10, Step 300] step time: 2.601s (±21.53s); train time: 43.77s; valid time: 3m 36.37s; loss: -30.9961 (±4.79241); valid loss: -34.6285
+WARNING:tensorflow:From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2024-05-21 21:10:46,185 [WARNING] tensorflow: From C:\Users\megav\anaconda3\envs\opt-6.3\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+[Epoch 1/10, Step 400] step time: 2.617s (±21.68s); train time: 43.78s; valid time: 3m 37.93s; loss: -33.3574 (±2.88927); valid loss: -37.159 (*)
+[Epoch 1/10, Step 500] step time: 2.604s (±21.55s); train time: 43.91s; valid time: 3m 36.54s; loss: -33.1174 (±2.89569); valid loss: -34.3073
+[Epoch 1/10, Step 600] step time: 2.596s (±21.48s); train time: 43.74s; valid time: 3m 35.86s; loss: -27.3909 (±32.0977); valid loss: -39.2361 (*)
+[Epoch 1/10, Step 700] step time: 2.575s (±21.29s); train time: 43.55s; valid time: 3m 33.93s; loss: -32.6055 (±5.38959); valid loss: -32.4673
+[Epoch 1/10, Step 800] step time: 2.587s (±21.46s); train time: 43.1s; valid time: 3m 35.62s; loss: -30.4481 (±9.95043); valid loss: -30.3221
+[Epoch 1/10, Step 900] step time: 2.554s (±21.14s); train time: 42.98s; valid time: 3m 32.43s; loss: -29.0972 (±10.076); valid loss: -33.9652
+[Epoch 1/10, Step 1000] step time: 2.546s (±21.13s); train time: 42.27s; valid time: 3m 32.38s; loss: -29.5656 (±8.17978); valid loss: -37.4605
+[Epoch 1/10, Step 1100] step time: 2.565s (±21.27s); train time: 42.79s; valid time: 3m 33.76s; loss: -27.7265 (±17.5317); valid loss: -41.2853 (*)
+[Epoch 1/10, Step 1200] step time: 2.547s (±21.15s); train time: 42.12s; valid time: 3m 32.57s; loss: -30.6972 (±10.85); valid loss: -41.7667 (*)
+[Epoch 1/10, Step 1300] step time: 2.541s (±21.07s); train time: 42.31s; valid time: 3m 31.78s; loss: -34.6967 (±9.60733); valid loss: -41.7109
+[Epoch 1/10, Step 1400] step time: 2.562s (±21.23s); train time: 42.82s; valid time: 3m 33.37s; loss: -37.2527 (±5.24809); valid loss: -35.5426
+[Epoch 1/10, Step 1500] step time: 2.535s (±21s); train time: 42.51s; valid time: 3m 31s; loss: -39.3531 (±3.47352); valid loss: 0.408366
+[Epoch 1/10, Step 1600] step time: 2.569s (±21.32s); train time: 42.55s; valid time: 3m 34.3s; loss: -30.8733 (±27.3054); valid loss: -41.834 (*)
+[Epoch 1/10, Step 1700] step time: 2.541s (±21.05s); train time: 42.57s; valid time: 3m 31.56s; loss: -35.048 (±10.0418); valid loss: -39.7155
+[Epoch 1/10, Step 1800] step time: 2.571s (±21.4s); train time: 42.04s; valid time: 3m 35.03s; loss: -38.4989 (±5.14711); valid loss: -44.0172 (*)
+train_values: (94629, 25)
+[Epoch 2/10, Step 1900, ETA 12h 9m 29.41s] step time: 2.596s (±21.44s); train time: 4.473s; valid time: 3m 35.49s; loss: -39.2371 (±7.02823); valid loss: -47.9035 (*)
+[Epoch 2/10, Step 2000, ETA 12h 5m 15.39s] step time: 2.579s (±21.26s); train time: 44.23s; valid time: 3m 33.64s; loss: -38.7109 (±4.5817); valid loss: -40.6571
+[Epoch 2/10, Step 2100, ETA 12h 47.3s] step time: 2.562s (±21.11s); train time: 43.99s; valid time: 3m 32.17s; loss: -39.1015 (±7.11003); valid loss: -45.2987
+[Epoch 2/10, Step 2200, ETA 11h 56m 34.8s] step time: 2.58s (±21.26s); train time: 44.36s; valid time: 3m 33.71s; loss: -41.6442 (±6.52613); valid loss: -46.6195
+[Epoch 2/10, Step 2300, ETA 11h 52m 12.62s] step time: 2.568s (±21.2s); train time: 43.78s; valid time: 3m 33.02s; loss: -41.9207 (±6.28408); valid loss: -47.4109
+[Epoch 2/10, Step 2400, ETA 11h 47m 45.59s] step time: 2.56s (±21.13s); train time: 43.64s; valid time: 3m 32.39s; loss: -41.9853 (±5.62487); valid loss: -44.4116
+[Epoch 2/10, Step 2500, ETA 11h 43m 27.43s] step time: 2.572s (±21.2s); train time: 44.21s; valid time: 3m 33.03s; loss: -42.0523 (±6.2314); valid loss: -51.9811 (*)
+[Epoch 2/10, Step 2600, ETA 11h 39m 5.752s] step time: 2.567s (±21.06s); train time: 44.99s; valid time: 3m 31.68s; loss: -44.4725 (±4.00892); valid loss: -49.6482
+[Epoch 2/10, Step 2700, ETA 11h 35m 3.094s] step time: 2.598s (±21.34s); train time: 45.27s; valid time: 3m 34.51s; loss: -44.3677 (±7.0595); valid loss: -48.1701
+[Epoch 2/10, Step 2800, ETA 11h 30m 55.48s] step time: 2.591s (±21.32s); train time: 44.85s; valid time: 3m 34.27s; loss: -44.774 (±5.42851); valid loss: -47.5252
+[Epoch 2/10, Step 2900, ETA 11h 26m 52.38s] step time: 2.601s (±21.34s); train time: 45.64s; valid time: 3m 34.45s; loss: -45.1573 (±9.94325); valid loss: -52.643 (*)
+[Epoch 2/10, Step 3000, ETA 11h 22m 58.01s] step time: 2.619s (±21.6s); train time: 44.84s; valid time: 3m 37.12s; loss: -45.5679 (±6.63571); valid loss: -54.737 (*)
+[Epoch 2/10, Step 3100, ETA 11h 18m 37.31s] step time: 2.571s (±21.14s); train time: 44.66s; valid time: 3m 32.48s; loss: -45.0407 (±6.10281); valid loss: -53.8775
+[Epoch 2/10, Step 3200, ETA 11h 14m 10.83s] step time: 2.559s (±20.93s); train time: 45.57s; valid time: 3m 30.35s; loss: -45.5719 (±8.01929); valid loss: -51.566
+[Epoch 2/10, Step 3300, ETA 11h 10m 2.58s] step time: 2.596s (±21.31s); train time: 45.48s; valid time: 3m 34.16s; loss: -47.8767 (±5.13622); valid loss: -52.1144
+[Epoch 2/10, Step 3400, ETA 11h 5m 39.13s] step time: 2.564s (±21.02s); train time: 45.23s; valid time: 3m 31.22s; loss: -47.2789 (±4.65752); valid loss: -53.1976
+[Epoch 2/10, Step 3500, ETA 11h 1m 32.35s] step time: 2.601s (±21.38s); train time: 45.27s; valid time: 3m 34.88s; loss: -46.4175 (±4.9626); valid loss: -50.8841
+[Epoch 2/10, Step 3600, ETA 10h 57m 15.25s] step time: 2.579s (±21.13s); train time: 45.56s; valid time: 3m 32.34s; loss: -47.4859 (±4.20301); valid loss: -54.1538
+[Epoch 2/10, Step 3700, ETA 10h 52m 55.92s] step time: 2.573s (±21.12s); train time: 45.1s; valid time: 3m 32.26s; loss: -48.1296 (±4.42882); valid loss: -53.462
+train_values: (94629, 25)
+[Epoch 3/10, Step 3800, ETA 10h 48m 31.85s] step time: 2.561s (±20.98s); train time: 9.111s; valid time: 3m 30.84s; loss: -47.9728 (±3.96395); valid loss: -52.0549
+[Epoch 3/10, Step 3900, ETA 10h 44m 7.019s] step time: 2.558s (±21.01s); train time: 44.69s; valid time: 3m 31.15s; loss: -47.7434 (±5.20009); valid loss: -52.9252
+[Epoch 3/10, Step 4000, ETA 10h 39m 47.65s] step time: 2.572s (±21.11s); train time: 45s; valid time: 3m 32.19s; loss: -48.6525 (±4.60496); valid loss: -54.8856 (*)
+[Epoch 3/10, Step 4100, ETA 10h 35m 27.11s] step time: 2.568s (±21.13s); train time: 44.45s; valid time: 3m 32.38s; loss: -48.3685 (±6.62773); valid loss: -53.5664
+[Epoch 3/10, Step 4200, ETA 10h 30m 58.14s] step time: 2.543s (±20.78s); train time: 45.5s; valid time: 3m 28.88s; loss: -48.3356 (±6.01392); valid loss: -53.8507
+[Epoch 3/10, Step 4300, ETA 10h 26m 33.3s] step time: 2.554s (±20.95s); train time: 44.87s; valid time: 3m 30.51s; loss: -48.9982 (±5.54673); valid loss: -53.7404
+[Epoch 3/10, Step 4400, ETA 10h 22m 7.197s] step time: 2.549s (±21.01s); train time: 43.74s; valid time: 3m 31.13s; loss: -49.4463 (±3.97258); valid loss: -56.4445 (*)
+[Epoch 3/10, Step 4500, ETA 10h 17m 44.87s] step time: 2.559s (±21.05s); train time: 44.38s; valid time: 3m 31.52s; loss: -49.8997 (±7.25582); valid loss: -54.7905
+[Epoch 3/10, Step 4600, ETA 10h 13m 35.44s] step time: 2.599s (±21.5s); train time: 43.85s; valid time: 3m 36.11s; loss: -49.4187 (±4.99561); valid loss: -54.3444
+[Epoch 3/10, Step 4700, ETA 10h 9m 25.47s] step time: 2.599s (±21.44s); train time: 44.43s; valid time: 3m 35.5s; loss: -49.6716 (±5.38719); valid loss: -54.529
+[Epoch 3/10, Step 4800, ETA 10h 5m 7.783s] step time: 2.574s (±21.22s); train time: 44.14s; valid time: 3m 33.3s; loss: -49.9123 (±4.44621); valid loss: -55.606
+[Epoch 3/10, Step 4900, ETA 10h 57.83s] step time: 2.601s (±21.49s); train time: 44.15s; valid time: 3m 36s; loss: -49.4624 (±6.67127); valid loss: -54.5208
+[Epoch 3/10, Step 5000, ETA 9h 56m 54.6s] step time: 2.627s (±21.69s); train time: 44.75s; valid time: 3m 37.96s; loss: -49.416 (±3.69905); valid loss: -55.2279
+[Epoch 3/10, Step 5100, ETA 9h 52m 37.3s] step time: 2.578s (±21.26s); train time: 44.11s; valid time: 3m 33.68s; loss: -50.4885 (±4.58778); valid loss: -57.3896 (*)
+[Epoch 3/10, Step 5200, ETA 9h 48m 21.97s] step time: 2.585s (±21.34s); train time: 44.1s; valid time: 3m 34.45s; loss: -50.6104 (±5.1577); valid loss: -57.0799
+[Epoch 3/10, Step 5300, ETA 9h 44m 10.25s] step time: 2.6s (±21.48s); train time: 44.19s; valid time: 3m 35.81s; loss: -49.3162 (±6.6139); valid loss: -55.7802
+[Epoch 3/10, Step 5400, ETA 9h 39m 49.62s] step time: 2.565s (±21.17s); train time: 43.84s; valid time: 3m 32.72s; loss: -50.4467 (±4.38058); valid loss: -55.6803
+[Epoch 3/10, Step 5500, ETA 9h 35m 36.93s] step time: 2.597s (±21.4s); train time: 44.69s; valid time: 3m 35.07s; loss: -50.2623 (±5.54903); valid loss: -55.4486
+[Epoch 3/10, Step 5600, ETA 9h 31m 22.41s] step time: 2.591s (±21.42s); train time: 43.84s; valid time: 3m 35.26s; loss: -50.9293 (±5.61513); valid loss: -56.7707
+train_values: (94629, 25)
+[Epoch 4/10, Step 5700, ETA 9h 27m 5.904s] step time: 2.582s (±21.24s); train time: 13.44s; valid time: 3m 33.49s; loss: -48.9432 (±5.24999); valid loss: -55.0916
+[Epoch 4/10, Step 5800, ETA 9h 22m 48.76s] step time: 2.58s (±21.27s); train time: 44.26s; valid time: 3m 33.79s; loss: -50.9259 (±4.37177); valid loss: -56.2154
+[Epoch 4/10, Step 5900, ETA 9h 18m 28.47s] step time: 2.566s (±21.11s); train time: 44.52s; valid time: 3m 32.12s; loss: -50.581 (±6.50439); valid loss: -56.1416
+[Epoch 4/10, Step 6000, ETA 9h 14m 14.42s] step time: 2.595s (±21.36s); train time: 44.81s; valid time: 3m 34.67s; loss: -51.4277 (±5.13678); valid loss: -56.571
+[Epoch 4/10, Step 6100, ETA 9h 10m 1.864s] step time: 2.603s (±21.46s); train time: 44.57s; valid time: 3m 35.71s; loss: -50.4771 (±6.25038); valid loss: -56.4841
+[Epoch 4/10, Step 6200, ETA 9h 5m 45.11s] step time: 2.583s (±21.23s); train time: 44.95s; valid time: 3m 33.4s; loss: -51.121 (±6.36658); valid loss: -56.7859
+[Epoch 4/10, Step 6300, ETA 9h 1m 29.27s] step time: 2.588s (±21.33s); train time: 44.49s; valid time: 3m 34.34s; loss: -50.5993 (±5.7242); valid loss: -55.4693
+[Epoch 4/10, Step 6400, ETA 8h 57m 13.07s] step time: 2.587s (±21.29s); train time: 44.76s; valid time: 3m 33.94s; loss: -51.1102 (±6.19902); valid loss: -56.2632
+[Epoch 4/10, Step 6500, ETA 8h 52m 57.5s] step time: 2.591s (±21.34s); train time: 44.55s; valid time: 3m 34.51s; loss: -50.9899 (±7.11449); valid loss: -56.0722
+[Epoch 4/10, Step 6600, ETA 8h 48m 40.87s] step time: 2.585s (±21.32s); train time: 44.25s; valid time: 3m 34.3s; loss: -50.3608 (±4.94253); valid loss: -55.5819
+[Epoch 4/10, Step 6700, ETA 8h 44m 21.98s] step time: 2.573s (±21.16s); train time: 44.7s; valid time: 3m 32.64s; loss: -50.7656 (±5.92242); valid loss: -56.6434
+[Epoch 4/10, Step 6800, ETA 8h 40m 5.391s] step time: 2.586s (±21.33s); train time: 44.21s; valid time: 3m 34.4s; loss: -51.5036 (±6.59822); valid loss: -57.7763 (*)
+[Epoch 4/10, Step 6900, ETA 8h 35m 52.97s] step time: 2.61s (±21.48s); train time: 45.14s; valid time: 3m 35.9s; loss: -51.7433 (±6.34175); valid loss: -57.7907 (*)
+[Epoch 4/10, Step 7000, ETA 8h 31m 32.4s] step time: 2.564s (±21.1s); train time: 44.33s; valid time: 3m 32.06s; loss: -51.4929 (±7.22595); valid loss: -56.1102
+[Epoch 4/10, Step 7100, ETA 8h 27m 16.43s] step time: 2.591s (±21.38s); train time: 44.23s; valid time: 3m 34.86s; loss: -51.4565 (±4.70235); valid loss: -54.0264
+[Epoch 4/10, Step 7200, ETA 8h 22m 59.82s] step time: 2.588s (±21.32s); train time: 44.5s; valid time: 3m 34.25s; loss: -50.6825 (±4.9997); valid loss: -56.4081
+[Epoch 4/10, Step 7300, ETA 8h 18m 42.73s] step time: 2.585s (±21.3s); train time: 44.42s; valid time: 3m 34.07s; loss: -50.8457 (±6.19191); valid loss: -56.054
+[Epoch 4/10, Step 7400, ETA 8h 14m 24.34s] step time: 2.577s (±21.18s); train time: 44.83s; valid time: 3m 32.84s; loss: -51.7335 (±4.88584); valid loss: -56.2639
+[Epoch 4/10, Step 7500, ETA 8h 10m 5.196s] step time: 2.571s (±21.18s); train time: 44.27s; valid time: 3m 32.9s; loss: -51.1192 (±6.0371); valid loss: -56.2732
+train_values: (94629, 25)
+[Epoch 5/10, Step 7600, ETA 8h 5m 49.39s] step time: 2.593s (±21.33s); train time: 17.89s; valid time: 3m 34.42s; loss: -51.6699 (±4.21927); valid loss: -58.543 (*)
+[Epoch 5/10, Step 7700, ETA 8h 1m 35.79s] step time: 2.609s (±21.51s); train time: 44.8s; valid time: 3m 36.15s; loss: -50.8587 (±6.39188); valid loss: -56.7275
+[Epoch 5/10, Step 7800, ETA 7h 57m 22.33s] step time: 2.612s (±21.52s); train time: 44.85s; valid time: 3m 36.33s; loss: -50.7609 (±6.78526); valid loss: -58.888 (*)
+[Epoch 5/10, Step 7900, ETA 7h 53m 7.848s] step time: 2.606s (±21.52s); train time: 44.32s; valid time: 3m 36.28s; loss: -52.909 (±4.3867); valid loss: -58.0842
+[Epoch 5/10, Step 8000, ETA 7h 48m 50.45s] step time: 2.585s (±21.29s); train time: 44.59s; valid time: 3m 33.97s; loss: -51.0435 (±7.24942); valid loss: -57.4315
+[Epoch 5/10, Step 8100, ETA 7h 44m 36.12s] step time: 2.609s (±21.57s); train time: 44.11s; valid time: 3m 36.77s; loss: -51.6266 (±4.82804); valid loss: -56.783
+[Epoch 5/10, Step 8200, ETA 7h 40m 20.82s] step time: 2.602s (±21.43s); train time: 44.91s; valid time: 3m 35.36s; loss: -52.2705 (±5.8082); valid loss: -58.4064
+[Epoch 5/10, Step 8300, ETA 7h 36m 7.028s] step time: 2.615s (±21.56s); train time: 44.8s; valid time: 3m 36.75s; loss: -51.8688 (±5.92517); valid loss: -55.6199
+[Epoch 5/10, Step 8400, ETA 7h 31m 52.22s] step time: 2.609s (±21.44s); train time: 45.35s; valid time: 3m 35.52s; loss: -51.2108 (±4.96773); valid loss: -57.1187
+[Epoch 5/10, Step 8500, ETA 7h 27m 39.58s] step time: 2.627s (±21.66s); train time: 45.03s; valid time: 3m 37.74s; loss: -51.4024 (±6.47365); valid loss: -57.6992
+[Epoch 5/10, Step 8600, ETA 7h 23m 27.8s] step time: 2.636s (±21.77s); train time: 44.88s; valid time: 3m 38.79s; loss: -52.5462 (±7.14064); valid loss: -58.6748
+[Epoch 5/10, Step 8700, ETA 7h 19m 12.74s] step time: 2.611s (±21.47s); train time: 45.39s; valid time: 3m 35.73s; loss: -50.9387 (±5.5668); valid loss: -58.3982
+[Epoch 5/10, Step 8800, ETA 7h 15m 2.615s] step time: 2.655s (±21.93s); train time: 45.18s; valid time: 3m 40.35s; loss: -52.021 (±5.42241); valid loss: -57.1187
+[Epoch 5/10, Step 8900, ETA 7h 10m 53.79s] step time: 2.67s (±22.15s); train time: 44.35s; valid time: 3m 42.65s; loss: -51.564 (±6.65784); valid loss: -58.4276
+[Epoch 5/10, Step 9000, ETA 7h 6m 44.12s] step time: 2.666s (±22.08s); train time: 44.71s; valid time: 3m 41.88s; loss: -52.2305 (±6.44761); valid loss: -57.1985
+[Epoch 5/10, Step 9100, ETA 7h 2m 35.73s] step time: 2.681s (±22.21s); train time: 44.9s; valid time: 3m 43.23s; loss: -52.0614 (±6.93429); valid loss: -56.9603
+[Epoch 5/10, Step 9200, ETA 6h 58m 25.25s] step time: 2.665s (±22.09s); train time: 44.52s; valid time: 3m 42.03s; loss: -52.116 (±4.63284); valid loss: -58.8277
+[Epoch 5/10, Step 9300, ETA 6h 54m 14.1s] step time: 2.662s (±21.98s); train time: 45.29s; valid time: 3m 40.95s; loss: -51.7627 (±6.18687); valid loss: -57.1362
+[Epoch 5/10, Step 9400, ETA 6h 50m 4.163s] step time: 2.677s (±22.19s); train time: 44.81s; valid time: 3m 42.95s; loss: -52.0228 (±6.29389); valid loss: -59.8107 (*)
+train_values: (94629, 25)
+[Epoch 6/10, Step 9500, ETA 6h 45m 53.62s] step time: 2.675s (±22.19s); train time: 22.03s; valid time: 3m 43.03s; loss: -52.6045 (±4.97578); valid loss: -58.782
+[Epoch 6/10, Step 9600, ETA 6h 41m 41.41s] step time: 2.662s (±22.02s); train time: 44.89s; valid time: 3m 41.29s; loss: -52.9886 (±5.90965); valid loss: -59.626
+[Epoch 6/10, Step 9700, ETA 6h 37m 27.43s] step time: 2.646s (±21.89s); train time: 44.55s; valid time: 3m 40.06s; loss: -51.5385 (±7.55381); valid loss: -57.4999
+[Epoch 6/10, Step 9800, ETA 6h 33m 15.06s] step time: 2.666s (±22.05s); train time: 45s; valid time: 3m 41.58s; loss: -52.592 (±5.88088); valid loss: -58.6383
+[Epoch 6/10, Step 9900, ETA 6h 29m 3.038s] step time: 2.673s (±22.15s); train time: 44.63s; valid time: 3m 42.65s; loss: -52.4494 (±7.56192); valid loss: -58.7833
+[Epoch 6/10, Step 10000, ETA 6h 24m 52.36s] step time: 2.691s (±22.31s); train time: 44.93s; valid time: 3m 44.2s; loss: -52.4453 (±9.95179); valid loss: -54.6604
+[Epoch 6/10, Step 10100, ETA 6h 20m 43.09s] step time: 2.711s (±22.63s); train time: 43.71s; valid time: 3m 47.46s; loss: -52.6045 (±5.43968); valid loss: -57.898
+[Epoch 6/10, Step 10200, ETA 6h 16m 35.17s] step time: 2.732s (±22.81s); train time: 43.97s; valid time: 3m 49.28s; loss: -52.3017 (±5.33817); valid loss: -60.8545 (*)
+[Epoch 6/10, Step 10300, ETA 6h 12m 30.62s] step time: 2.779s (±23.22s); train time: 44.55s; valid time: 3m 53.32s; loss: -53.0333 (±10.1865); valid loss: -59.7843
+[Epoch 6/10, Step 10400, ETA 6h 8m 23.72s] step time: 2.758s (±23.08s); train time: 43.84s; valid time: 3m 51.95s; loss: -50.939 (±7.60671); valid loss: -55.9286
+[Epoch 6/10, Step 10500, ETA 6h 4m 17.11s] step time: 2.768s (±23.07s); train time: 44.92s; valid time: 3m 51.91s; loss: -52.425 (±6.10025); valid loss: -59.5283
+[Epoch 6/10, Step 10600, ETA 6h 7.73s] step time: 2.74s (±22.88s); train time: 44.06s; valid time: 3m 49.97s; loss: -52.7442 (±5.73542); valid loss: -58.0693
+[Epoch 6/10, Step 10700, ETA 5h 55m 58.37s] step time: 2.746s (±22.94s); train time: 44.13s; valid time: 3m 50.52s; loss: -51.1188 (±5.25487); valid loss: -56.0155
+[Epoch 6/10, Step 10800, ETA 5h 51m 49.99s] step time: 2.766s (±23.11s); train time: 44.3s; valid time: 3m 52.28s; loss: -52.0738 (±5.08008); valid loss: -58.9759
+[Epoch 6/10, Step 10900, ETA 5h 47m 39.17s] step time: 2.739s (±22.81s); train time: 44.72s; valid time: 3m 49.25s; loss: -52.9004 (±6.10761); valid loss: -59.2793
+[Epoch 6/10, Step 11000, ETA 5h 43m 27.8s] step time: 2.738s (±22.86s); train time: 44.08s; valid time: 3m 49.71s; loss: -52.8221 (±7.08573); valid loss: -59.2676
+[Epoch 6/10, Step 11100, ETA 5h 39m 18.08s] step time: 2.767s (±23.09s); train time: 44.63s; valid time: 3m 52.08s; loss: -53.47 (±8.73889); valid loss: -59.5307
+[Epoch 6/10, Step 11200, ETA 5h 35m 5.263s] step time: 2.729s (±22.74s); train time: 44.32s; valid time: 3m 48.59s; loss: -52.1422 (±4.99024); valid loss: -58.2854
+[Epoch 6/10, Step 11300, ETA 5h 30m 51.4s] step time: 2.719s (±22.59s); train time: 44.86s; valid time: 3m 47.01s; loss: -52.6515 (±6.49449); valid loss: -59.0986
+train_values: (94629, 25)
+[Epoch 7/10, Step 11400, ETA 5h 26m 38.32s] step time: 2.735s (±22.74s); train time: 27.14s; valid time: 3m 48.58s; loss: -52.5967 (±7.81499); valid loss: -59.4067
+[Epoch 7/10, Step 11500, ETA 5h 22m 24.82s] step time: 2.734s (±22.71s); train time: 45.21s; valid time: 3m 48.24s; loss: -52.3368 (±7.09479); valid loss: -57.7805
+[Epoch 7/10, Step 11600, ETA 5h 18m 8.927s] step time: 2.702s (±22.4s); train time: 45.01s; valid time: 3m 45.18s; loss: -53.0117 (±4.62348); valid loss: -57.3992
+[Epoch 7/10, Step 11700, ETA 5h 13m 55s] step time: 2.738s (±22.77s); train time: 44.96s; valid time: 3m 48.82s; loss: -52.5827 (±8.08613); valid loss: -58.228
+[Epoch 7/10, Step 11800, ETA 5h 9m 38.64s] step time: 2.703s (±22.44s); train time: 44.83s; valid time: 3m 45.47s; loss: -51.7725 (±6.49432); valid loss: -57.627
+[Epoch 7/10, Step 11900, ETA 5h 5m 22.88s] step time: 2.717s (±22.6s); train time: 44.54s; valid time: 3m 47.19s; loss: -53.3684 (±4.17396); valid loss: -58.3845
+[Epoch 7/10, Step 12000, ETA 5h 1m 6.545s] step time: 2.712s (±22.51s); train time: 44.97s; valid time: 3m 46.21s; loss: -53.198 (±5.73456); valid loss: -56.616
+[Epoch 7/10, Step 12100, ETA 4h 56m 50.43s] step time: 2.72s (±22.57s); train time: 45.15s; valid time: 3m 46.87s; loss: -52.8949 (±6.78796); valid loss: -57.3407
+[Epoch 7/10, Step 12200, ETA 4h 52m 34s] step time: 2.719s (±22.58s); train time: 44.95s; valid time: 3m 46.95s; loss: -52.6741 (±8.6934); valid loss: -58.8867
+[Epoch 7/10, Step 12300, ETA 4h 48m 17.49s] step time: 2.722s (±22.66s); train time: 44.51s; valid time: 3m 47.73s; loss: -53.1441 (±5.95119); valid loss: -59.6642
+[Epoch 7/10, Step 12400, ETA 4h 43m 58.92s] step time: 2.688s (±22.28s); train time: 44.84s; valid time: 3m 43.93s; loss: -53.0539 (±6.09983); valid loss: -58.8419
+[Epoch 7/10, Step 12500, ETA 4h 39m 41.32s] step time: 2.71s (±22.42s); train time: 45.6s; valid time: 3m 45.4s; loss: -52.8708 (±6.07194); valid loss: -59.1289
+[Epoch 7/10, Step 12600, ETA 4h 35m 22.67s] step time: 2.693s (±22.24s); train time: 45.83s; valid time: 3m 43.49s; loss: -52.2088 (±5.9511); valid loss: -58.6869
+[Epoch 7/10, Step 12700, ETA 4h 31m 3.411s] step time: 2.684s (±22.19s); train time: 45.38s; valid time: 3m 43.04s; loss: -51.2108 (±6.47461); valid loss: -56.6671
+[Epoch 7/10, Step 12800, ETA 4h 26m 44.23s] step time: 2.689s (±22.26s); train time: 45.18s; valid time: 3m 43.7s; loss: -52.2241 (±4.53548); valid loss: -58.6036
+[Epoch 7/10, Step 12900, ETA 4h 22m 25.56s] step time: 2.703s (±22.41s); train time: 45.06s; valid time: 3m 45.24s; loss: -52.4519 (±7.34198); valid loss: -50.1971
+[Epoch 7/10, Step 13000, ETA 4h 18m 5.543s] step time: 2.677s (±22.07s); train time: 45.94s; valid time: 3m 41.79s; loss: -51.746 (±5.88702); valid loss: -58.6321
+[Epoch 7/10, Step 13100, ETA 4h 13m 48.18s] step time: 2.74s (±22.71s); train time: 45.73s; valid time: 3m 48.27s; loss: -52.5524 (±4.89296); valid loss: -60.8993 (*)
+[Epoch 7/10, Step 13200, ETA 4h 9m 27.98s] step time: 2.68s (±22.18s); train time: 45.1s; valid time: 3m 42.9s; loss: -53.1165 (±6.26615); valid loss: -59.3329
+train_values: (94629, 25)
+[Epoch 8/10, Step 13300, ETA 4h 5m 8.161s] step time: 2.691s (±22.32s); train time: 31.46s; valid time: 3m 44.28s; loss: -51.9541 (±6.47931); valid loss: -56.1856
+[Epoch 8/10, Step 13400, ETA 4h 47.27s] step time: 2.669s (±22.15s); train time: 44.33s; valid time: 3m 42.59s; loss: -52.9518 (±5.42046); valid loss: -60.3345
+[Epoch 8/10, Step 13500, ETA 3h 56m 28.19s] step time: 2.717s (±22.54s); train time: 45.14s; valid time: 3m 46.52s; loss: -51.3996 (±8.63509); valid loss: -58.7234
+[Epoch 8/10, Step 13600, ETA 3h 52m 7.44s] step time: 2.679s (±22.24s); train time: 44.38s; valid time: 3m 43.49s; loss: -52.4675 (±6.9283); valid loss: -58.2314
+[Epoch 8/10, Step 13700, ETA 3h 47m 46.67s] step time: 2.681s (±22.11s); train time: 45.88s; valid time: 3m 42.19s; loss: -52.2089 (±6.16555); valid loss: -60.4464
+[Epoch 8/10, Step 13800, ETA 3h 43m 25.92s] step time: 2.684s (±22.16s); train time: 45.7s; valid time: 3m 42.74s; loss: -52.1008 (±6.49286); valid loss: -61.5044 (*)
+[Epoch 8/10, Step 13900, ETA 3h 39m 4.91s] step time: 2.68s (±22.22s); train time: 44.63s; valid time: 3m 43.37s; loss: -52.2025 (±9.55514); valid loss: -58.6664
+[Epoch 8/10, Step 14000, ETA 3h 34m 43.53s] step time: 2.672s (±22.01s); train time: 46.06s; valid time: 3m 41.18s; loss: -53.2949 (±8.28467); valid loss: -54.0662
+[Epoch 8/10, Step 14100, ETA 3h 30m 22.75s] step time: 2.692s (±22.38s); train time: 44.39s; valid time: 3m 44.85s; loss: -52.188 (±5.66976); valid loss: -58.435
+[Epoch 8/10, Step 14200, ETA 3h 26m 1.553s] step time: 2.683s (±22.26s); train time: 44.62s; valid time: 3m 43.72s; loss: -52.8653 (±5.61574); valid loss: -58.5926
+[Epoch 8/10, Step 14300, ETA 3h 21m 38.92s] step time: 2.642s (±21.93s); train time: 43.81s; valid time: 3m 40.37s; loss: -51.5199 (±5.46601); valid loss: -57.1902
+[Epoch 8/10, Step 14400, ETA 3h 17m 16.49s] step time: 2.649s (±21.96s); train time: 44.21s; valid time: 3m 40.71s; loss: -51.6282 (±11.2942); valid loss: -57.4515
+[Epoch 8/10, Step 14500, ETA 3h 12m 54.99s] step time: 2.681s (±22.27s); train time: 44.31s; valid time: 3m 43.79s; loss: -51.6023 (±8.31467); valid loss: -57.6084
+[Epoch 8/10, Step 14600, ETA 3h 8m 35.6s] step time: 2.755s (±22.89s); train time: 45.44s; valid time: 3m 50.09s; loss: -53.6747 (±6.72134); valid loss: -58.145
+[Epoch 8/10, Step 14700, ETA 3h 4m 13.78s] step time: 2.678s (±22.24s); train time: 44.28s; valid time: 3m 43.54s; loss: -52.1272 (±6.9208); valid loss: -59.1641
+[Epoch 8/10, Step 14800, ETA 2h 59m 54.53s] step time: 2.774s (±23.21s); train time: 44.06s; valid time: 3m 53.32s; loss: -50.7439 (±9.0151); valid loss: -59.0883
+[Epoch 8/10, Step 14900, ETA 2h 55m 34.6s] step time: 2.757s (±22.92s); train time: 45.36s; valid time: 3m 50.4s; loss: -53.045 (±7.29951); valid loss: -59.6744
+[Epoch 8/10, Step 15000, ETA 2h 51m 14.77s] step time: 2.77s (±23.14s); train time: 44.38s; valid time: 3m 52.59s; loss: -52.5809 (±6.1542); valid loss: -57.7812
+[Epoch 8/10, Step 15100, ETA 2h 46m 54.97s] step time: 2.78s (±23.25s); train time: 44.38s; valid time: 3m 53.61s; loss: -51.5349 (±6.79495); valid loss: -60.1064
+train_values: (94629, 25)
+[Epoch 9/10, Step 15200, ETA 2h 42m 34.19s] step time: 2.748s (±22.94s); train time: 35.57s; valid time: 3m 50.55s; loss: -51.5541 (±8.73408); valid loss: -58.4615
+[Epoch 9/10, Step 15300, ETA 2h 38m 13.68s] step time: 2.769s (±23.16s); train time: 44.08s; valid time: 3m 52.82s; loss: -53.2145 (±5.95292); valid loss: -60.0456
+[Epoch 9/10, Step 15400, ETA 2h 34m 13.52s] step time: 3.673s (±32.14s); train time: 44.25s; valid time: 5m 23.06s; loss: -52.1732 (±10.202); valid loss: -59.2254
+[Epoch 9/10, Step 15500, ETA 2h 30m 3.32s] step time: 3.29s (±27.5s); train time: 52.68s; valid time: 4m 36.39s; loss: -52.6095 (±9.5522); valid loss: -59.1369
+[Epoch 9/10, Step 15600, ETA 2h 25m 41.35s] step time: 2.782s (±23.26s); train time: 44.47s; valid time: 3m 53.72s; loss: -50.3154 (±10.3583); valid loss: -57.0108
+[Epoch 9/10, Step 15700, ETA 2h 21m 18.51s] step time: 2.75s (±22.95s); train time: 44.31s; valid time: 3m 50.67s; loss: -52.6939 (±6.514); valid loss: -57.4222
+[Epoch 9/10, Step 15800, ETA 2h 16m 55.53s] step time: 2.75s (±22.94s); train time: 44.42s; valid time: 3m 50.6s; loss: -51.8045 (±6.99623); valid loss: -59.0475
+[Epoch 9/10, Step 15900, ETA 2h 12m 32.26s] step time: 2.742s (±22.87s); train time: 44.39s; valid time: 3m 49.85s; loss: -52.1545 (±10.1071); valid loss: -61.3109
+[Epoch 9/10, Step 16000, ETA 2h 8m 8.487s] step time: 2.723s (±22.68s); train time: 44.36s; valid time: 3m 47.92s; loss: -51.8579 (±11.8535); valid loss: -58.1517
+[Epoch 9/10, Step 16100, ETA 2h 4m 0.6857s] step time: 3.647s (±31.88s); train time: 44.33s; valid time: 5m 20.38s; loss: -50.9098 (±7.08176); valid loss: -57.1251
+[Epoch 9/10, Step 16200, ETA 1h 59m 35.15s] step time: 2.67s (±22.16s); train time: 44.24s; valid time: 3m 42.72s; loss: -52.7108 (±5.64034); valid loss: -59.9862
+[Epoch 9/10, Step 16300, ETA 1h 55m 9.702s] step time: 2.676s (±22.14s); train time: 45.12s; valid time: 3m 42.5s; loss: -52.5004 (±10.2046); valid loss: -55.0944
+[Epoch 9/10, Step 16400, ETA 1h 50m 44.16s] step time: 2.672s (±22.11s); train time: 44.94s; valid time: 3m 42.24s; loss: -52.8085 (±7.29884); valid loss: -58.1671
+[Epoch 9/10, Step 16500, ETA 1h 46m 18.64s] step time: 2.674s (±22.13s); train time: 45.08s; valid time: 3m 42.38s; loss: -50.8055 (±8.22368); valid loss: -60.1744
+[Epoch 9/10, Step 16600, ETA 1h 41m 53.12s] step time: 2.676s (±22.15s); train time: 44.99s; valid time: 3m 42.6s; loss: -50.3946 (±10.4814); valid loss: -54.7548
+[Epoch 9/10, Step 16700, ETA 1h 37m 27.5s] step time: 2.67s (±22.1s); train time: 44.96s; valid time: 3m 42.09s; loss: -53.4256 (±8.24928); valid loss: -59.7751
+[Epoch 9/10, Step 16800, ETA 1h 33m 1.876s] step time: 2.672s (±22.09s); train time: 45.16s; valid time: 3m 42.04s; loss: -53.2734 (±8.2635); valid loss: -60.1565
+[Epoch 9/10, Step 16900, ETA 1h 28m 36.17s] step time: 2.667s (±22.06s); train time: 45s; valid time: 3m 41.66s; loss: -49.6681 (±11.8578); valid loss: -57.5644
+[Epoch 9/10, Step 17000, ETA 1h 24m 10.37s] step time: 2.658s (±21.99s); train time: 44.85s; valid time: 3m 41.01s; loss: -51.7723 (±9.00911); valid loss: -60.1611
+train_values: (94629, 25)
+[Epoch 10/10, Step 17100, ETA 1h 19m 44.45s] step time: 2.646s (±21.85s); train time: 40.5s; valid time: 3m 39.6s; loss: -51.0925 (±11.8277); valid loss: -60.623
+[Epoch 10/10, Step 17200, ETA 1h 15m 18.41s] step time: 2.634s (±21.78s); train time: 44.56s; valid time: 3m 38.9s; loss: -50.7661 (±13.4717); valid loss: -59.9029
+[Epoch 10/10, Step 17300, ETA 1h 10m 52.42s] step time: 2.636s (±21.79s); train time: 44.6s; valid time: 3m 38.97s; loss: -50.8939 (±15.9686); valid loss: -55.2924
+[Epoch 10/10, Step 17400, ETA 1h 6m 26.47s] step time: 2.638s (±21.8s); train time: 44.7s; valid time: 3m 39.13s; loss: -52.1302 (±7.72451); valid loss: -57.1746
+[Epoch 10/10, Step 17500, ETA 1h 2m 0.5248s] step time: 2.634s (±21.77s); train time: 44.6s; valid time: 3m 38.86s; loss: -50.0647 (±14.5096); valid loss: -59.4747
+[Epoch 10/10, Step 17600, ETA 57m 34.62s] step time: 2.636s (±21.77s); train time: 44.77s; valid time: 3m 38.84s; loss: -51.2497 (±12.1052); valid loss: -60.581
+[Epoch 10/10, Step 17700, ETA 53m 8.744s] step time: 2.638s (±21.79s); train time: 44.83s; valid time: 3m 38.96s; loss: -51.241 (±12.8652); valid loss: -59.2791
+[Epoch 10/10, Step 17800, ETA 48m 42.87s] step time: 2.633s (±21.76s); train time: 44.59s; valid time: 3m 38.74s; loss: -50.1191 (±10.8461); valid loss: -59.1978
+[Epoch 10/10, Step 17900, ETA 44m 17s] step time: 2.63s (±21.75s); train time: 44.45s; valid time: 3m 38.63s; loss: -50.642 (±13.4671); valid loss: -57.351
+[Epoch 10/10, Step 18000, ETA 39m 51.2s] step time: 2.635s (±21.78s); train time: 44.63s; valid time: 3m 38.93s; loss: -51.5797 (±12.5432); valid loss: -59.706
+[Epoch 10/10, Step 18100, ETA 35m 25.43s] step time: 2.64s (±21.82s); train time: 44.65s; valid time: 3m 39.34s; loss: -51.86 (±9.77442); valid loss: -56.2673
+[Epoch 10/10, Step 18200, ETA 30m 59.95s] step time: 2.708s (±22.5s); train time: 44.73s; valid time: 3m 46.13s; loss: -50.1698 (±19.0316); valid loss: -59.2168
+[Epoch 10/10, Step 18300, ETA 26m 34.45s] step time: 2.719s (±22.66s); train time: 44.17s; valid time: 3m 47.71s; loss: -52.5674 (±12.6789); valid loss: -63.1077 (*)
+[Epoch 10/10, Step 18400, ETA 22m 8.848s] step time: 2.709s (±22.58s); train time: 44.01s; valid time: 3m 46.94s; loss: -48.6107 (±20.7584); valid loss: -56.7418
+[Epoch 10/10, Step 18500, ETA 17m 43.19s] step time: 2.711s (±22.61s); train time: 43.91s; valid time: 3m 47.23s; loss: -52.119 (±14.6452); valid loss: -61.6712
+[Epoch 10/10, Step 18600, ETA 13m 17.48s] step time: 2.71s (±22.6s); train time: 43.89s; valid time: 3m 47.16s; loss: -50.6152 (±11.3487); valid loss: -62.2801
+[Epoch 10/10, Step 18700, ETA 8m 51.72s] step time: 2.72s (±22.67s); train time: 44.19s; valid time: 3m 47.82s; loss: -51.5752 (±11.1282); valid loss: -60.1676
+[Epoch 10/10, Step 18800, ETA 4m 25.89s] step time: 2.719s (±22.68s); train time: 43.95s; valid time: 3m 47.95s; loss: -51.956 (±11.7711); valid loss: -60.6831
+[Epoch 10/10, Step 18900, ETA 0s] step time: 2.719s (±22.66s); train time: 44.13s; valid time: 3m 47.77s; loss: -47.7894 (±21.019); valid loss: -59.9791
+INFO:tensorflow:Restoring parameters from C:\Users\megav\AppData\Local\Temp\tmp_tj67woy\variables.dat-18300
+2024-05-22 10:51:03,607 [INFO] tensorflow: Restoring parameters from C:\Users\megav\AppData\Local\Temp\tmp_tj67woy\variables.dat-18300
+------------------------------ testing ------------------------------
+search range:  -400.0 400.0
+cur thr:  -399.0 [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -349.0 [0.6869015971178465, 0.9712271083507462, 0.5313551264203314, 29063, 371961, 861, 25633, 100.90428140818378] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -299.0 [0.6865770471774582, 0.969930583043008, 0.5313551264203314, 29063, 371921, 901, 25633, 100.90428140818378] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -249.0 [0.6865689373583578, 0.9698982142600039, 0.5313551264203314, 29063, 371920, 902, 25633, 100.90428140818378] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -199.0 [0.6864392063034831, 0.9693806073948898, 0.5313551264203314, 29063, 371904, 918, 25633, 93.52336417445632] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -149.0 [0.6856133219553614, 0.9660938068124543, 0.5313551264203314, 29063, 371802, 1020, 25633, 93.52336417445632] [0.6886023728989052, 0.9780582194251866, 0.5313551264203314, 29063, 372170, 652, 25633, 100.90428140818378] -399.0
+cur thr:  -99.0 [0.695430376054566, 0.9535261511901872, 0.5472977913289275, 29935, 371363, 1459, 24761, 76.11969552121792] [0.6956465392038081, 0.96006307493079, 0.5454329383235642, 29833, 371581, 1241, 24863, 75.49968541797743] -118.0
+cur thr:  -49.0 [0.694797612192068, 0.9162899311648482, 0.5595473159720002, 30605, 370026, 2796, 24091, 33.63322122259593] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  1.0 [0.6641948922516663, 0.7585575431378697, 0.5907196137577301, 32310, 362538, 10284, 22386, 46.44988387529031] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  51.0 [0.6037114742231585, 0.6172981027077629, 0.5907196137577301, 32310, 352791, 20031, 22386, 45.474886312784214] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  101.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  151.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  201.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  251.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  301.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+cur thr:  351.0 [0.22685162638149592, 0.12793847276306639, 0.9999999998171712, 54696, 0, 372822, 0, 0.0] [0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+[0.6977561941661214, 0.9462496866559449, 0.552636390128595, 30227, 371105, 1717, 24469, 61.85162277176751] -81.0
+Initial threshold : 53.464214
+Number of peaks : 1350
+Grimshaw maximum log-likelihood estimation ... [done]
+        γ = 0
+        σ = 1191.7877
+        L = 10912.333154788963
+Extreme quantile (probability = 0.001): 2796.9155255882197
+100%|█████████████████████████████████████████████████████████████████████| 427518/427518 [00:00<00:00, 4144475.45it/s]
+2747
+427518
+POT result:  (0.6955542580662789, 0.9244527978765376, 0.5575179171132225, 30494, 370330, 2492, 24202) -53.566888881297835 43.10329964379433
+==============================result==============================
+{'FN': 24469,
+ 'FP': 1717,
+ 'TN': 371105,
+ 'TP': 30227,
+ 'best-f1': 0.6977561941661214,
+ 'best_valid_loss': -63.10774401026591,
+ 'latency': 61.85162277176751,
+ 'pot-FN': 24202,
+ 'pot-FP': 2492,
+ 'pot-TN': 370330,
+ 'pot-TP': 30494,
+ 'pot-f1': 0.6955542580662789,
+ 'pot-latency': 43.10329964379433,
+ 'pot-precision': 0.9244527978765376,
+ 'pot-recall': 0.5575179171132225,
+ 'pot-threshold': -53.566888881297835,
+ 'precision': 0.9462496866559449,
+ 'pred_time': 0.33947811214815954,
+ 'pred_total_time': 2904.5807979106903,
+ 'recall': 0.552636390128595,
+ 'threshold': -81.0,
+ 'train_time': 5026.14346306324,
+ 'valid_time': 0.2730241214250224}
+
+(opt-6.3) D:\Karina\Optimization\OmniAnomaly>
