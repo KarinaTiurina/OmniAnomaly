@@ -210,8 +210,8 @@ class SPOT:
 
         if verbose:
             print('[done]')
-            print('\t' + chr(0x03B3) + ' = ' + str(g))
-            print('\t' + chr(0x03C3) + ' = ' + str(s))
+            print('\t' + 'gamma' + ' = ' + str(g))
+            print('\t' + 'sigma' + ' = ' + str(s))
             print('\tL = ' + str(l))
             print('Extreme quantile (probability = %s): %s' % (self.proba, self.extreme_quantile))
 
