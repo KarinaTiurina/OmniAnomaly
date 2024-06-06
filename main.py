@@ -111,7 +111,8 @@ def main():
                           lr_anneal_epochs=config.lr_anneal_epoch_freq,
                           lr_anneal_factor=config.lr_anneal_factor,
                           grad_clip_norm=config.gradient_clip_norm,
-                          valid_step_freq=config.valid_step_freq)
+                          valid_step_freq=config.valid_step_freq,
+                          optimizer=tf.train.GradientDescentOptimizer)
 
         # construct the predictor
         predictor = Predictor(model, batch_size=config.batch_size, n_z=config.test_n_z,
