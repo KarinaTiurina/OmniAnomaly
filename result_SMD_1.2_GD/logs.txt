@@ -1,0 +1,232 @@
+Configurations
+===========================================
+{'batch_size': 50,
+ 'bf_search_max': 400.0,
+ 'bf_search_min': -400.0,
+ 'bf_search_step_size': 1.0,
+ 'dataset': 'machine-1-2',
+ 'dense_dim': 500,
+ 'early_stop': True,
+ 'get_score_on_dim': False,
+ 'gradient_clip_norm': 10.0,
+ 'initial_lr': 0.001,
+ 'l2_reg': 0.0001,
+ 'level': 0.01,
+ 'lr_anneal_epoch_freq': 40,
+ 'lr_anneal_factor': 0.5,
+ 'lr_anneal_step_freq': None,
+ 'max_epoch': 10,
+ 'max_test_size': None,
+ 'max_train_size': None,
+ 'nf_layers': 20,
+ 'posterior_flow_type': 'nf',
+ 'restore_dir': None,
+ 'result_dir': 'result',
+ 'rnn_cell': 'GRU',
+ 'rnn_num_hidden': 500,
+ 'save_dir': 'model',
+ 'save_z': False,
+ 'std_epsilon': 0.0001,
+ 'test_batch_size': 50,
+ 'test_n_z': 1,
+ 'test_score_filename': 'test_score.pkl',
+ 'test_start': 0,
+ 'train_score_filename': 'train_score.pkl',
+ 'train_start': 0,
+ 'use_connected_z_p': True,
+ 'use_connected_z_q': True,
+ 'valid_step_freq': 100,
+ 'window_length': 100,
+ 'x_dim': 38,
+ 'z_dim': 3}
+
+load data of: machine-1-2
+train:  0 None
+test:  0 None
+Data normalized
+Data normalized
+train set shape:  (23694, 38)
+test set shape:  (23694, 38)
+test set label shape:  (23694,)
+Trainable Parameters                                            (2,607,740 in total)
+------------------------------------------------------------------------------------
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/kernel             (538, 1000)  538,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/bias               (1000,)        1,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/kernel         (538, 500)   269,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/bias           (500,)           500
+model/q_z_given_x/rnn_q_z/dense/kernel                          (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense/bias                            (500,)           500
+model/q_z_given_x/rnn_q_z/dense_1/kernel                        (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense_1/bias                          (500,)           500
+model/vae/variational/z_mean/kernel                             (503, 3)       1,509
+model/vae/variational/z_mean/bias                               (3,)               3
+model/vae/variational/z_std/kernel                              (503, 3)       1,509
+model/vae/variational/z_std/bias                                (3,)               3
+model/posterior_flow/_0/w                                       (1, 3)             3
+model/posterior_flow/_0/b                                       (1,)               1
+model/posterior_flow/_0/u                                       (1, 3)             3
+model/posterior_flow/_1/w                                       (1, 3)             3
+model/posterior_flow/_1/b                                       (1,)               1
+model/posterior_flow/_1/u                                       (1, 3)             3
+model/posterior_flow/_2/w                                       (1, 3)             3
+model/posterior_flow/_2/b                                       (1,)               1
+model/posterior_flow/_2/u                                       (1, 3)             3
+model/posterior_flow/_3/w                                       (1, 3)             3
+model/posterior_flow/_3/b                                       (1,)               1
+model/posterior_flow/_3/u                                       (1, 3)             3
+model/posterior_flow/_4/w                                       (1, 3)             3
+model/posterior_flow/_4/b                                       (1,)               1
+model/posterior_flow/_4/u                                       (1, 3)             3
+model/posterior_flow/_5/w                                       (1, 3)             3
+model/posterior_flow/_5/b                                       (1,)               1
+model/posterior_flow/_5/u                                       (1, 3)             3
+model/posterior_flow/_6/w                                       (1, 3)             3
+model/posterior_flow/_6/b                                       (1,)               1
+model/posterior_flow/_6/u                                       (1, 3)             3
+model/posterior_flow/_7/w                                       (1, 3)             3
+model/posterior_flow/_7/b                                       (1,)               1
+model/posterior_flow/_7/u                                       (1, 3)             3
+model/posterior_flow/_8/w                                       (1, 3)             3
+model/posterior_flow/_8/b                                       (1,)               1
+model/posterior_flow/_8/u                                       (1, 3)             3
+model/posterior_flow/_9/w                                       (1, 3)             3
+model/posterior_flow/_9/b                                       (1,)               1
+model/posterior_flow/_9/u                                       (1, 3)             3
+model/posterior_flow/_10/w                                      (1, 3)             3
+model/posterior_flow/_10/b                                      (1,)               1
+model/posterior_flow/_10/u                                      (1, 3)             3
+model/posterior_flow/_11/w                                      (1, 3)             3
+model/posterior_flow/_11/b                                      (1,)               1
+model/posterior_flow/_11/u                                      (1, 3)             3
+model/posterior_flow/_12/w                                      (1, 3)             3
+model/posterior_flow/_12/b                                      (1,)               1
+model/posterior_flow/_12/u                                      (1, 3)             3
+model/posterior_flow/_13/w                                      (1, 3)             3
+model/posterior_flow/_13/b                                      (1,)               1
+model/posterior_flow/_13/u                                      (1, 3)             3
+model/posterior_flow/_14/w                                      (1, 3)             3
+model/posterior_flow/_14/b                                      (1,)               1
+model/posterior_flow/_14/u                                      (1, 3)             3
+model/posterior_flow/_15/w                                      (1, 3)             3
+model/posterior_flow/_15/b                                      (1,)               1
+model/posterior_flow/_15/u                                      (1, 3)             3
+model/posterior_flow/_16/w                                      (1, 3)             3
+model/posterior_flow/_16/b                                      (1,)               1
+model/posterior_flow/_16/u                                      (1, 3)             3
+model/posterior_flow/_17/w                                      (1, 3)             3
+model/posterior_flow/_17/b                                      (1,)               1
+model/posterior_flow/_17/u                                      (1, 3)             3
+model/posterior_flow/_18/w                                      (1, 3)             3
+model/posterior_flow/_18/b                                      (1,)               1
+model/posterior_flow/_18/u                                      (1, 3)             3
+model/posterior_flow/_19/w                                      (1, 3)             3
+model/posterior_flow/_19/b                                      (1,)               1
+model/posterior_flow/_19/u                                      (1, 3)             3
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/kernel      (503, 1000)  503,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/bias        (1000,)        1,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/kernel  (503, 500)   251,500
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/bias    (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense/kernel                   (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense/bias                     (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense_1/kernel                 (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense_1/bias                   (500,)           500
+model/p_x_given_z/x_mean/kernel                                 (500, 38)     19,000
+model/p_x_given_z/x_mean/bias                                   (38,)             38
+model/p_x_given_z/x_std/kernel                                  (500, 38)     19,000
+model/p_x_given_z/x_std/bias                                    (38,)             38
+
+train_values: (16586, 38)
+[Epoch 1/10, Step 100] step time: 0.9023s (±3.893s); train time: 51.49s; valid time: 38.82s; loss: -5.1608 (±23.364); valid loss: -24.3553 (*)
+[Epoch 1/10, Step 200] step time: 0.8302s (±3.854s); train time: 44.29s; valid time: 38.73s; loss: -31.5417 (±4.95863); valid loss: -33.7453 (*)
+[Epoch 1/10, Step 300] step time: 0.811s (±3.83s); train time: 42.62s; valid time: 38.49s; loss: -36.9074 (±3.38474); valid loss: -35.8002 (*)
+train_values: (16586, 38)
+[Epoch 2/10, Step 400, ETA 42m 10.85s] step time: 0.9579s (±4.893s); train time: 34.6s; valid time: 48.81s; loss: -38.8701 (±3.02279); valid loss: -35.5403
+[Epoch 2/10, Step 500, ETA 40m 4.358s] step time: 0.806s (±3.789s); train time: 42.54s; valid time: 38.05s; loss: -40.75 (±2.48987); valid loss: -37.0584 (*)
+[Epoch 2/10, Step 600, ETA 38m 14.75s] step time: 0.8094s (±3.827s); train time: 42.47s; valid time: 38.48s; loss: -42.8851 (±2.74171); valid loss: -38.9363 (*)
+train_values: (16586, 38)
+[Epoch 3/10, Step 700, ETA 36m 28.61s] step time: 0.7964s (±3.713s); train time: 17.95s; valid time: 37.35s; loss: -43.4624 (±4.36492); valid loss: -30.0488
+[Epoch 3/10, Step 800, ETA 34m 51.16s] step time: 0.803s (±3.774s); train time: 42.41s; valid time: 37.93s; loss: -44.2987 (±4.43203); valid loss: -39.5165 (*)
+[Epoch 3/10, Step 900, ETA 33m 15.57s] step time: 0.7958s (±3.774s); train time: 41.74s; valid time: 37.87s; loss: -45.6068 (±4.44785); valid loss: -41.4681 (*)
+train_values: (16586, 38)
+[Epoch 4/10, Step 1000, ETA 31m 48.19s] step time: 0.8179s (±3.871s); train time: 5.696s; valid time: 38.9s; loss: -44.8194 (±10.2834); valid loss: -27.3194
+[Epoch 4/10, Step 1100, ETA 30m 19.95s] step time: 0.8083s (±3.82s); train time: 42.52s; valid time: 38.34s; loss: -45.6524 (±7.91709); valid loss: -43.7875 (*)
+[Epoch 4/10, Step 1200, ETA 28m 49.26s] step time: 0.7872s (±3.67s); train time: 41.86s; valid time: 36.89s; loss: -45.435 (±10.9768); valid loss: -31.8721
+[Epoch 4/10, Step 1300, ETA 27m 21.88s] step time: 0.7966s (±3.769s); train time: 41.82s; valid time: 37.89s; loss: -49.1135 (±2.91704); valid loss: -46.7523 (*)
+train_values: (16586, 38)
+[Epoch 5/10, Step 1400, ETA 25m 54.84s] step time: 0.7912s (±3.709s); train time: 35.24s; valid time: 37.24s; loss: -51.4911 (±2.10027); valid loss: -45.2219
+[Epoch 5/10, Step 1500, ETA 24m 29.53s] step time: 0.797s (±3.762s); train time: 41.94s; valid time: 37.78s; loss: -53.3428 (±2.06061); valid loss: -47.5312 (*)
+[Epoch 5/10, Step 1600, ETA 23m 3.698s] step time: 0.7852s (±3.722s); train time: 41.14s; valid time: 37.42s; loss: -54.5047 (±1.90324); valid loss: -48.2603 (*)
+train_values: (16586, 38)
+[Epoch 6/10, Step 1700, ETA 21m 38.85s] step time: 0.7867s (±3.708s); train time: 22.85s; valid time: 37.25s; loss: -55.7638 (±1.70272); valid loss: -50.8375 (*)
+[Epoch 6/10, Step 1800, ETA 20m 15.02s] step time: 0.7908s (±3.715s); train time: 41.78s; valid time: 37.32s; loss: -55.9315 (±2.26193); valid loss: -52.4807 (*)
+[Epoch 6/10, Step 1900, ETA 18m 51.19s] step time: 0.784s (±3.67s); train time: 41.53s; valid time: 36.89s; loss: -56.7088 (±2.09788); valid loss: -51.5379
+train_values: (16586, 38)
+[Epoch 7/10, Step 2000, ETA 17m 27.83s] step time: 0.7828s (±3.66s); train time: 10.82s; valid time: 36.78s; loss: -57.3375 (±2.0165); valid loss: -52.4492
+[Epoch 7/10, Step 2100, ETA 16m 5.191s] step time: 0.7872s (±3.681s); train time: 41.75s; valid time: 36.99s; loss: -58.0224 (±1.9156); valid loss: -50.7333
+[Epoch 7/10, Step 2200, ETA 14m 43.1s] step time: 0.7909s (±3.69s); train time: 42.03s; valid time: 37.09s; loss: -58.5299 (±2.39119); valid loss: -52.3032
+[Epoch 7/10, Step 2300, ETA 13m 21.39s] step time: 0.7941s (±3.74s); train time: 41.83s; valid time: 37.59s; loss: -59.0185 (±1.87405); valid loss: -54.0866 (*)
+train_values: (16586, 38)
+[Epoch 8/10, Step 2400, ETA 11m 59.64s] step time: 0.7875s (±3.74s); train time: 39.99s; valid time: 37.58s; loss: -59.4612 (±2.008); valid loss: -55.8346 (*)
+[Epoch 8/10, Step 2500, ETA 10m 38.35s] step time: 0.795s (±3.738s); train time: 41.95s; valid time: 37.57s; loss: -59.898 (±1.96123); valid loss: -55.9521 (*)
+[Epoch 8/10, Step 2600, ETA 9m 16.93s] step time: 0.7844s (±3.669s); train time: 41.61s; valid time: 36.86s; loss: -60.3111 (±2.40831); valid loss: -55.4872
+train_values: (16586, 38)
+[Epoch 9/10, Step 2700, ETA 7m 55.93s] step time: 0.7936s (±3.71s); train time: 28.63s; valid time: 37.26s; loss: -60.4999 (±2.05512); valid loss: -54.5419
+[Epoch 9/10, Step 2800, ETA 6m 35.1s] step time: 0.7972s (±3.715s); train time: 42.39s; valid time: 37.35s; loss: -60.9318 (±1.99182); valid loss: -55.3687
+[Epoch 9/10, Step 2900, ETA 5m 14.35s] step time: 0.7975s (±3.739s); train time: 42.2s; valid time: 37.57s; loss: -61.0546 (±1.85604); valid loss: -55.7232
+train_values: (16586, 38)
+[Epoch 10/10, Step 3000, ETA 3m 53.75s] step time: 0.8056s (±3.808s); train time: 16.69s; valid time: 38.23s; loss: -61.4918 (±2.48398); valid loss: -56.776 (*)
+[Epoch 10/10, Step 3100, ETA 2m 33.07s] step time: 0.7943s (±3.749s); train time: 41.76s; valid time: 37.69s; loss: -61.737 (±2.26106); valid loss: -57.9971 (*)
+[Epoch 10/10, Step 3200, ETA 1m 12.46s] step time: 0.7864s (±3.685s); train time: 41.64s; valid time: 37.03s; loss: -62.1234 (±2.61781); valid loss: -57.2588
+------------------------------ testing ------------------------------
+search range:  -400.0 400.0
+cur thr:  -399.0 [0.8322931940502944, 0.9481131851860098, 0.7416974032897159, 402.0, 23031.0, 22.0, 140.0, 4.857073470378995] [0.8322931940502944, 0.9481131851860098, 0.7416974032897159, 402.0, 23031.0, 22.0, 140.0, 4.857073470378995] -399.0
+cur thr:  -349.0 [0.8297164155566606, 0.941451968584263, 0.7416974032897159, 402.0, 23028.0, 25.0, 140.0, 4.857073470378995] [0.8322931940502944, 0.9481131851860098, 0.7416974032897159, 402.0, 23031.0, 22.0, 140.0, 4.857073470378995] -399.0
+cur thr:  -299.0 [0.8263054283833073, 0.9327145955286638, 0.7416974032897159, 402.0, 23024.0, 29.0, 140.0, 4.857073470378995] [0.8322931940502944, 0.9481131851860098, 0.7416974032897159, 402.0, 23031.0, 22.0, 140.0, 4.857073470378995] -399.0
+cur thr:  -249.0 [0.8170682057937314, 0.9095022418664652, 0.7416974032897159, 402.0, 23013.0, 40.0, 140.0, 4.857073470378995] [0.8322931940502944, 0.9481131851860098, 0.7416974032897159, 402.0, 23031.0, 22.0, 140.0, 4.857073470378995] -399.0
+cur thr:  -199.0 [0.8786403288162117, 0.8963531497820894, 0.8616236003390481, 467.0, 22999.0, 54.0, 75.0, 11.374857814277322] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  -149.0 [0.8703653543497104, 0.8736059317173619, 0.8671586555874787, 470.0, 22985.0, 68.0, 72.0, 3.7777358029355232] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  -99.0 [0.8124409868762191, 0.7642276298499573, 0.8671586555874787, 470.0, 22908.0, 145.0, 72.0, 3.7777358029355232] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  -49.0 [0.7655319872454743, 0.6201372926757747, 0.9999999815498158, 542.0, 22721.0, 332.0, 0.0, 7.699923000769992] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  1.0 [0.6629925016708909, 0.4958828865884457, 0.9999999815498158, 542.0, 22502.0, 551.0, 0.0, 2.7999720002799973] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  51.0 [0.4164392657924497, 0.2629791350656034, 0.9999999815498158, 542.0, 21534.0, 1519.0, 0.0, 2.299977000229998] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  101.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  151.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  201.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  251.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  301.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+cur thr:  351.0 [0.04490986463185329, 0.022970968415778358, 0.9999999815498158, 542.0, 0.0, 23053.0, 0.0, 0.0] [0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+[0.8895187978511753, 0.9192913204863914, 0.8616236003390481, 467.0, 23012.0, 41.0, 75.0, 11.374857814277322] -233.0
+Initial threshold : 136.21497
+Number of peaks : 235
+Grimshaw maximum log-likelihood estimation ... [done]
+	gamma = 0
+	sigma = 178.9249
+	L = 1453.9370437737348
+Extreme quantile (probability = 0.001): 547.4829093464389
+230
+23595
+POT result:  (0.8727897844033746, 0.8785046564765485, 0.8671586555874787, 470.0, 22988.0, 65.0, 72.0) -153.8021391628792 3.7777358029355232
+==============================result==============================
+{'FN': 75.0,
+ 'FP': 41.0,
+ 'TN': 23012.0,
+ 'TP': 467.0,
+ 'best-f1': 0.8895187978511753,
+ 'best_valid_loss': -57.99705121698827,
+ 'latency': 11.374857814277322,
+ 'pot-FN': 72.0,
+ 'pot-FP': 65.0,
+ 'pot-TN': 22988.0,
+ 'pot-TP': 470.0,
+ 'pot-f1': 0.8727897844033746,
+ 'pot-latency': 3.7777358029355232,
+ 'pot-precision': 0.8785046564765485,
+ 'pot-recall': 0.8671586555874787,
+ 'pot-threshold': -153.8021391628792,
+ 'precision': 0.9192913204863914,
+ 'pred_time': 0.3149811393123562,
+ 'pred_total_time': 148.7290849685669,
+ 'recall': 0.8616236003390481,
+ 'threshold': -233.0,
+ 'train_time': 261.5545172214508,
+ 'valid_time': 0.26700109607995826}
