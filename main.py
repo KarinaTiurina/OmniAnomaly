@@ -112,8 +112,7 @@ def main():
                           lr_anneal_factor=config.lr_anneal_factor,
                           grad_clip_norm=config.gradient_clip_norm,
                           valid_step_freq=config.valid_step_freq,
-                          optimizer=tf.train.MomentumOptimizer,
-                          optimizer_params={'use_nesterov':False, 'momentum':0.5})
+                          optimizer=tf.train.AdagradOptimizer)
 
         # construct the predictor
         predictor = Predictor(model, batch_size=config.batch_size, n_z=config.test_n_z,
